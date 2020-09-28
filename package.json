@@ -1,6 +1,10 @@
 {
   "name": "track-depenses",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.x",
+    "yarn": "1.x"
+  },
   "description": "MESN Stack",
   "main": "server.js",
   "author": "Alexandro Disla",

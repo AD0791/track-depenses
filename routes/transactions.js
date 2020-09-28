@@ -1,7 +1,7 @@
 const {
     Router
 } = require('express')
-const Transaction = require('../models/Transaction')
+const Transaction = require('../models/transaction')
 
 const router = Router()
 

@@ -20,9 +20,17 @@ module.exports = {
 		filename: '[name].js',
 		chunkFilename: '[name].[id].js'
 	},
+	// to lock the api service
+	// avoid any 8080 problem
+	devServer: {
+		proxy: {
+			'/api': {
+				target: 'http://localhost:3000',
+			},
+		},
+	},
 	module: {
-		rules: [
-			{
+		rules: [{
 				test: /\.svelte$/,
 				use: {
 					loader: 'svelte-loader',
@@ -51,5 +59,5 @@ module.exports = {
 			filename: '[name].css'
 		})
 	],
-	devtool: prod ? false: 'source-map'
+	devtool: prod ? false : 'source-map'
 };

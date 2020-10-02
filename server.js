@@ -10,6 +10,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const transactionsRoutes = require('./routes/transactions')
+const authRoutes = require('./routes/auth')
 const path = require('path')
 const passport = require('passport')
 const session = require('express-session')
@@ -54,7 +55,7 @@ app.use(passport.session())
 
 
 app.use('/api/transactions', transactionsRoutes)
-
+app.use('/api/auth', authRoutes)
 // we want to serve any static files directly form our server in a production environment
 if (nodeENV === 'production') {
     app.use(express.static('client/public'))

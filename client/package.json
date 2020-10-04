@@ -17,5 +17,8 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "dev": "webpack-dev-server --content-base public"
+  },
+  "dependencies": {
+    "svelte-spa-router": "^3.0.3"
   }
 }

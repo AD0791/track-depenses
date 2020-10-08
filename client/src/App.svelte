@@ -9,6 +9,7 @@
   import axios from "axios";
   import { user } from "./store";
   import Loading from "./components/Loading.svelte";
+  import Profile from "./pages/Profile.svelte";
   let loading = true;
   onMount(async () => {
     const { data } = await axios.get("api/auth/user");
@@ -20,6 +21,7 @@
     "/dashboard": wrap(Dashboard, { reason: "unauthenticated" }, () => $user),
     "/signup": wrap(Signup, { reason: "authenticated" }, () => !$user),
     "/login": wrap(Login, { reason: "authenticated" }, () => !$user),
+    "/profile": wrap(Profile, { reason: "unauthenticated" }, () => $user),
   };
   function conditionsFailed(event) {
     const { reason } = event.detail.userData;
